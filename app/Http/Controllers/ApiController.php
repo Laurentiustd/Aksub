@@ -82,7 +82,7 @@ class ApiController extends Controller
 
     public function delete($id){
         $book = Book::find($id);
-        Book::destroy($book);
+        Book::destroy($id);
         return response()->json(["messages"=>"success","data"=>$book, "deleted_by" => Auth::user()]);
     }
 }
